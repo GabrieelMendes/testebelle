@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: #efefef;
+}
+
+.main-list-acessorios-center {
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-list-acessorios {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list-acessorios {
+    width: 31%;
+    height: 400px;
+    margin-bottom: 150px;
+    /* Espaço entre os produtos */
+    display: block;
+}
+
+.list-acessorios  .product img {
+    width: 100%;
+    height: 400px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .850);
+}
+
+.list-acessorios h3 {
+    padding-top: 7px;
+    margin-left: 15px;
+
+}
+
+.list-acessorios p {
+    padding-top: 9px;
+    margin-left: 15px;
+    font-size: 19px;
+}
+
+.list-acessorios a {
+    text-decoration: none;
+    padding-top: 5px;
+    margin-left: 15px;
+}
+
+.list-acessorios a button {
+    padding: 5px 15px;
+    font-size: 17px;
+    margin-top: 10px;
+    background-color: black;
+    color: #fff;
+    border: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .450);
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*CARRINHO*/
+
+
+#cart-icon {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: #000000cf;
+    color: #fff;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#cart-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+
+#cart-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background-color: #e74c3c;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 15px;
+}
+
+
+#close-cart {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    border: 0;
+    background-color: #e74c3c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+    
+}
+
+
+
+/*SALVARR*/
+
+#favorites-icon {
+    cursor: pointer;
+    position: fixed;
+    right: 90px;
+    top: 28px;
+    font-size: 34px; /* Tamanho do ícone */
+    color: #e74c3c; /* Cor do ícone */
+}
+
+#favorites-counter {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 80%;
+   
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}   
+
+
+
+/*DIV FILTRAR ACESSÓRIOS*/
+.pagina-acessórios{
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.acessórios-quais{
+    width: 75%;
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.separete-filter{
+    display: flex;
+    align-items: center;
+    width: 55%;
+    justify-content: space-between
+}
+.separete-filter p{
+    font-size: 19px;
+}
+
+
+.separete-filter select{
+    padding: 5px 25px;
+    font-size: 18px;
+}
+.separete-filter option{
+    padding: 5px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Loja de Acessórios</title>
+  <style>
+    /* Estilos CSS básicos (personalize conforme necessário) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    #cart-icon {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #cart-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão do Carrinho -->
+  <div id="cart-icon" onclick="toggleCart()">🛒</div>
+
+  <!-- Carrinho Modal -->
+  <div id="cart-modal">
+    <h2>Carrinho de Compras</h2>
+    <div id="cart-items"></div>
+    <p id="total">Total: R$0,00</p>
+  </div>
+
+  <!-- Produtos -->
+  <div class="product">
+    <h2>Produto 1</h2>
+    <p>Preço: R$50,00</p>
+    <button onclick="addToCart('Produto 1', 50)">Adicionar ao Carrinho</button>
+  </div>
+
+  <div class="product">
+    <h2>Produto 2</h2>
+    <p>Preço: R$30,00</p>
+    <button onclick="addToCart('Produto 2', 30)">Adicionar ao Carrinho</button>
+  </div>
+
+  <!-- Script JavaScript -->
+  <script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const totalDiv = document.getElementById('total');
+
+      // Limpa o conteúdo anterior
+      cartItemsDiv.innerHTML = '';
+
+      // Adiciona cada item ao carrinho
+      let total = 0;
+      cart.forEach(item => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        cartItemDiv.innerHTML = `
+          <span>${item.name}</span>
+          <span>R$${item.price.toFixed(2)}</span>
+          <button onclick="removeFromCart('${item.name}')">Remover</button>
+        `;
+        cartItemsDiv.appendChild(cartItemDiv);
+
+        total += item.price;
+      });
+
+      // Atualiza o total
+      totalDiv.textContent = `Total: R$${total.toFixed(2)}`;
+    }
+
+    function removeFromCart(productName) {
+      cart = cart.filter(item => item.name !== productName);
+      updateCart();
+    }
+
+    function toggleCart() {
+      const cartModal = document.getElementById('cart-modal');
+      cartModal.style.display = (cartModal.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

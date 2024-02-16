@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/produ.css">
+    <title>Adicionar produto</title>
+</head>
+
+<body>
+    <a href="../index.html"><button>Voltar</button></a>
+    <div class="adic">
+        <div class="pro">
+            <a href="../Acessorios/todos/acessoriosTodos.php">todos</a>
+            <h1>Produtos BelleAura</h1><br>
+            <form action="adicionar-produto.php" method="post" enctype="multipart/form-data">
+                <label for="nome-produto">Nome:</label><br><br>
+                <input type="text" name="nome-produto" id="nome-produto" placeholder="Nome do produto"><br><br>
+                <label for="valor-produto">Valor:</label><br><br>
+                <input type="text" name="valor-produto" id="valor-produto" placeholder="Valor do produto"><br><br>
+                <label for="link-produto">Link:</label><br>
+                <input type="text" name="link-produto" id="link-produto" placeholder="Link do produto"><br><br>
+                <label for="foto-produto">Foto</label><br>
+                <input type="file" name="foto-produto" id="foto-produto" accept="image/*" required><br><br>
+                <input type="submit" value="Adicionar" name="submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
